@@ -5,13 +5,13 @@ import './Product.css';
 // description
 // price
 // quantity
-const Product = () => {
+const Product = ({ product }) => {
   return (
     <div className='product-container'>
-      <span>Name</span>
-      <span>This is a Product</span>
-      <span>$10</span>
-      <span>2</span>
+      <span>{product.productName}</span>
+      <span>{product.productDescription}</span>
+      <span>${product.price}</span>
+      <span>{product.quantity}</span>
     </div>
   );
 };

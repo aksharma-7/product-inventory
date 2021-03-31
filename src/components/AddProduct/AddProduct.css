@@ -41,3 +41,18 @@
 input:focus {
   border: 1px solid #7722f0;
 }
+
+.add-btn {
+  border: 0px;
+  background-color: #7722f0;
+  padding: 10px 15px;
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+  cursor: pointer;
+  width: 50%;
+  margin: 0 10%;
+}
+
+.add-btn:hover {
+  background-color: #883ef0;
+}
