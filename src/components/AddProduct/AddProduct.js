@@ -20,6 +20,7 @@ const AddProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    localStorage.setItem('cartProducts', JSON.stringify(productData));
     dispatch(addproduct(productData));
   };
 
@@ -28,7 +29,7 @@ const AddProduct = () => {
       <img className='image-container' src={cart} />
       <form className='form-container' onSubmit={handleSubmit}>
         <h2>Add Product</h2>
-        <label for='name'>Product Name</label>
+        <label htmlFor='name'>Product Name</label>
         <input
           id='name'
           type='text'
@@ -38,7 +39,7 @@ const AddProduct = () => {
             setProductData({ ...productData, productName: e.target.value })
           }
         />
-        <label for='description'>Product Description</label>
+        <label htmlFor='description'>Product Description</label>
         <input
           id='description'
           type='text'
@@ -51,7 +52,7 @@ const AddProduct = () => {
             })
           }
         />
-        <label for='price'>Price</label>
+        <label htmlFor='price'>Price</label>
         <input
           id='price'
           type='text'
@@ -62,7 +63,7 @@ const AddProduct = () => {
             setProductData({ ...productData, price: e.target.value })
           }
         />
-        <label for='quantity'>Quantity</label>
+        <label htmlFor='quantity'>Quantity</label>
         <input
           id='quantity'
           type='number'

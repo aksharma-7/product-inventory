@@ -7,12 +7,16 @@ import './Product.css';
 // quantity
 const Product = ({ product }) => {
   return (
-    <div className='product-container'>
-      <span>{product.productName}</span>
-      <span>{product.productDescription}</span>
-      <span>${product.price}</span>
-      <span>{product.quantity}</span>
-    </div>
+    <>
+      {product && (
+        <div className='product-container'>
+          <span>{product.productName}</span>
+          <span>{product.productDescription}</span>
+          <span>${product.price}</span>
+          <span>{product.quantity}</span>
+        </div>
+      )}
+    </>
   );
 };
 

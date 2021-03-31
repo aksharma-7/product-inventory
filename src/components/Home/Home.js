@@ -5,11 +5,16 @@ import Product from '../Product/Product';
 
 const Home = () => {
   const products = useSelector((state) => state.products);
+  let productsArr = [];
+
+  for (let product of Object.keys(products)) {
+    productsArr.push(products[product]);
+  }
 
   return (
     <>
       <Header />
-      {products.map((product, index) => (
+      {productsArr.map((product, index) => (
         <Product key={index} product={product} />
       ))}
     </>
