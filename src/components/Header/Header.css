@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+  height: 5rem;
+}
+
+.logo-container {
+  color: #7722f0;
+}
+
+.info-container {
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-to-cart-container {
+  color: #7722f0;
+  cursor: pointer;
+}
+
+.add-to-cart-container:hover {
+  background-color: #7722f0;
+  color: white;
+  padding: 10px 20px;
+}
+
+.logout-btn {
+  border: 0px;
+  background-color: #7722f0;
+  padding: 10px 15px;
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #883ef0;
+}
