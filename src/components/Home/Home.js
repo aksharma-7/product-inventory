@@ -13,21 +13,23 @@ const Home = () => {
     productsArr.push(products[product]);
   }
 
-  const handleFilter = () => {
-    productsArr.sort((a, b) => a - b);
+  const handlePriceFilter = () => {
+    productsArr.sort((a, b) => a.price - b.price);
   };
 
-  console.log(productsArr);
+  const handleQuantityFilter = () => {
+    productsArr.sort((a, b) => a.quantity - b.quantity);
+  };
 
   return (
     <>
       <Header />
       <div className='filter-container'>
         Filter By:
-        <span className='price-filter' onClick={handleFilter}>
+        <span className='price-filter' onClick={handlePriceFilter}>
           Price
         </span>
-        <span className='quantity-filter' onClick={handleFilter}>
+        <span className='quantity-filter' onClick={handleQuantityFilter}>
           Quantity
         </span>
       </div>
