@@ -10,9 +10,7 @@ function App() {
   return (
     <Router>
       {!user.userName ? (
-        <Route path='/login'>
-          <Login />
-        </Route>
+        <Login />
       ) : (
         <Switch>
           <Route path='/addproduct'>
