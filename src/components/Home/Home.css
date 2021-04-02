@@ -1,13 +1,25 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search {
+  padding: 1% 2%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
 .filter-container {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   margin: 2% 5% 0 0;
+  width: max-content;
 }
 
 .price-filter,
 .quantity-filter {
-  margin-left: 2%;
+  margin-left: 10%;
   color: #7722f0;
   cursor: pointer;
 }
