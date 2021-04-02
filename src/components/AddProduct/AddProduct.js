@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { addproduct } from '../../actions/productAction';
 import cart from '../../images/cart.svg';
 import './AddProduct.css';
@@ -8,20 +9,34 @@ import './AddProduct.css';
 // price
 // quantity
 const AddProduct = () => {
-  const [productData, setProductData] = useState({
-    productName: '',
-    productDescription: '',
-    price: 0,
-    quantity: 0,
-  });
+  // const [productData, setProductData] = useState([
+  //   {
+  //     productName: '',
+  //     productDescription: '',
+  //     price: 0,
+  //     quantity: 0,
+  //   },
+  // ]);
+  const [productName, setProductName] = useState('');
+  const [productDescription, setProductDescription] = useState('');
+  const [price, setPrice] = useState('');
+  const [quantity, setQuantity] = useState('');
 
+  const history = useHistory();
   const dispatch = useDispatch();
-
+  const product = {
+    productName,
+    productDescription,
+    price,
+    quantity,
+  };
+  console.log(product);
   const handleSubmit = (e) => {
     e.preventDefault();
+    localStorage.setItem('cartProducts', JSON.stringify(product));
 
-    localStorage.setItem('cartProducts', JSON.stringify(productData));
-    dispatch(addproduct(productData));
+    dispatch(addproduct(product));
+    history.push('/');
   };
 
   return (
@@ -34,23 +49,18 @@ const AddProduct = () => {
           id='name'
           type='text'
           placeholder='Product Name'
-          value={productData.productName}
-          onChange={(e) =>
-            setProductData({ ...productData, productName: e.target.value })
-          }
+          value={productName}
+          required
+          onChange={(e) => setProductName(e.target.value)}
         />
         <label htmlFor='description'>Product Description</label>
         <input
           id='description'
           type='text'
           placeholder='Product Description'
-          value={productData.productDescription}
-          onChange={(e) =>
-            setProductData({
-              ...productData,
-              productDescription: e.target.value,
-            })
-          }
+          value={productDescription}
+          required
+          onChange={(e) => setProductDescription(e.target.value)}
         />
         <label htmlFor='price'>Price</label>
         <input
@@ -58,20 +68,18 @@ const AddProduct = () => {
           type='text'
           placeholder='number'
           placeholder='Price'
-          value={productData.price}
-          onChange={(e) =>
-            setProductData({ ...productData, price: e.target.value })
-          }
+          value={price}
+          required
+          onChange={(e) => setPrice(e.target.value)}
         />
         <label htmlFor='quantity'>Quantity</label>
         <input
           id='quantity'
           type='number'
           placeholder='Quantity'
-          value={productData.quantity}
-          onChange={(e) =>
-            setProductData({ ...productData, quantity: e.target.value })
-          }
+          value={quantity}
+          required
+          onChange={(e) => setQuantity(e.target.value)}
         />
         <button type='submit' className='add-btn'>
           Add Product

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { addUser } from '../../actions/userAction';
 import loginImage from '../../images/login.svg';
 import './Login.css';
@@ -11,12 +12,13 @@ const Login = () => {
   });
 
   const dispatch = useDispatch();
-
+  const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
     localStorage.setItem('user', JSON.stringify(user));
     dispatch(addUser(user));
+    history.push('/');
   };
 
   return (

@@ -9,16 +9,16 @@ const Home = () => {
   let productsArr = [];
   console.log(products);
 
-  // for (let product of Object.keys(products)) {
-  //   productsArr.push(products[product]);
-  // }
+  for (let product of Object.keys(products)) {
+    productsArr.push(products[product]);
+  }
 
   const handlePriceFilter = () => {
-    productsArr.sort((a, b) => a.price - b.price);
+    products.products.sort((a, b) => a.price - b.price);
   };
 
   const handleQuantityFilter = () => {
-    productsArr.sort((a, b) => a.quantity - b.quantity);
+    products.products.sort((a, b) => a.quantity - b.quantity);
   };
 
   return (
@@ -33,7 +33,7 @@ const Home = () => {
           Quantity
         </span>
       </div>
-      {productsArr.map((product, index) => (
+      {products.products.map((product, index) => (
         <Product key={index} product={product} />
       ))}
     </>
