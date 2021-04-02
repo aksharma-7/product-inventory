@@ -32,6 +32,7 @@ const Login = () => {
           type='text'
           placeholder='Your Name'
           value={user.userName}
+          required
           onChange={(e) => setUser({ ...user, userName: e.target.value })}
         />
         <label htmlFor='email'>Email</label>
@@ -40,6 +41,7 @@ const Login = () => {
           type='email'
           placeholder='abc@def.com'
           value={user.email}
+          required
           onChange={(e) => setUser({ ...user, userEmail: e.target.value })}
         />
         <button type='submit' className='login-btn'>
