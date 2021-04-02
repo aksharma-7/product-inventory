@@ -9,9 +9,9 @@ const Home = () => {
   let productsArr = [];
   console.log(products);
 
-  for (let product of Object.keys(products)) {
-    productsArr.push(products[product]);
-  }
+  // for (let product of Object.keys(products)) {
+  //   productsArr.push(products[product]);
+  // }
 
   const handlePriceFilter = () => {
     productsArr.sort((a, b) => a.price - b.price);

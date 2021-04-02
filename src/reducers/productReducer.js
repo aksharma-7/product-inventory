@@ -1,11 +1,11 @@
-import { ADD_PRODUCT } from '../constants/productConstants';
+// import { ADD_PRODUCT } from '../constants/productConstants';
 
-export const productsReducer = (products = [], action) => {
-  switch (action.type) {
-    case ADD_PRODUCT:
-      return [...products, action.payload];
+// export const productsReducer = (products = [], action) => {
+//   switch (action.type) {
+//     case ADD_PRODUCT:
+//       return [...products, action.payload];
 
-    default:
-      return products;
-  }
-};
+//     default:
+//       return products;
+//   }
+// };

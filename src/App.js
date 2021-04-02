@@ -9,7 +9,7 @@ function App() {
   console.log(user);
   return (
     <Router>
-      {!user.userInfo ? (
+      {!user.userName ? (
         <Login />
       ) : (
         <Switch>

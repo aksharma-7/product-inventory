@@ -14,7 +14,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log(user);
     localStorage.setItem('user', JSON.stringify(user));
     dispatch(addUser(user));
   };

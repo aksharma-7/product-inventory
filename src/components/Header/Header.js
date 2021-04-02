@@ -9,7 +9,7 @@ import './Header.css';
 const Header = () => {
   const user = useSelector((state) => state.user);
   console.log(user);
-  const { userInfo } = user;
+  // const { userInfo } = user;
 
   const handleLogout = () => {
     localStorage.removeItem('user');
@@ -20,7 +20,7 @@ const Header = () => {
     <div className='container'>
       <div className='logo-container'>Product Inventory</div>
       <div className='info-container'>
-        <div className='username-container'>{userInfo.userName}</div>
+        <div className='username-container'>{user.userName}</div>
         <Link to='/addproduct'>
           <div className='add-to-cart-container'>Add to Cart</div>
         </Link>
