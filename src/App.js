@@ -6,7 +6,7 @@ import Login from './components/Login/Login';
 
 function App() {
   const user = useSelector((state) => state.user);
-  console.log(user);
+
   return (
     <Router>
       {!user.userName ? (

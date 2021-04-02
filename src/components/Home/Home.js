@@ -6,12 +6,6 @@ import './Home.css';
 
 const Home = () => {
   const products = useSelector((state) => state.products);
-  let productsArr = [];
-  console.log(products);
-
-  for (let product of Object.keys(products)) {
-    productsArr.push(products[product]);
-  }
 
   const handlePriceFilter = () => {
     products.products.sort((a, b) => a.price - b.price);

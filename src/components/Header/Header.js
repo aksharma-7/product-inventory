@@ -2,15 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import './Header.css';
-// Site name
-// user name
-// logout
-// Add to cart
+
 const Header = () => {
   const user = useSelector((state) => state.user);
-  console.log(user);
-  // const { userInfo } = user;
   const history = useHistory();
+
   const handleLogout = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('cartProducts');

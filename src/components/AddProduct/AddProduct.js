@@ -24,13 +24,13 @@ const AddProduct = () => {
 
   const history = useHistory();
   const dispatch = useDispatch();
+
   const product = {
     productName,
     productDescription,
     price,
     quantity,
   };
-  console.log(product);
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem('cartProducts', JSON.stringify(product));
